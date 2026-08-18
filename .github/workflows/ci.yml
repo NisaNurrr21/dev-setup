@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: uv Kurulumu
+      uses: astral-sh/setup-uv@v2
+      with:
+        enable-cache: true
+
+    - name: Python Kurulumu
+      run: uv python install 3.12
+
+    - name: Bağımlılıkları Kur
+      run: make install
+
+    - name: Kod Kalite Kontrolü (Lint)
+      run: make lint
+
+    - name: Testleri Çalıştır
+      run: make test
