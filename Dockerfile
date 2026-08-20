@@ -6,11 +6,15 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 WORKDIR /app
 
-# Sadece proje bağımlılık dosyalarını kopyalıyoruz
-COPY pyproject.toml ./
+# Proje bağımlılık dosyasını kopyalıyoruz
+COPY pyproject.toml README.md ./
+
+# Proje kodlarını (ve oluşturduğumuz __init__.py dosyasını) kopyalıyoruz
+COPY src/ src/
 
 # uv ile bağımlılıkları sistem ortamına (sanal ortam olmadan) kuruyoruz
 RUN uv pip install --system .
+
 
 # 2. AŞAMA: Çalıştırma (Runner)
 FROM python:3.12-slim
@@ -24,7 +28,7 @@ WORKDIR /app
 # 1. aşamada kurulan temiz Python kütüphanelerini kopyalıyoruz
 COPY --from=builder /usr/local/lib/python3.12/site-packages /usr/local/lib/python3.12/site-packages
 
-# Sadece kaynak kodumuzu kopyalıyoruz
+# Kaynak kodumuzu çalıştırma ortamına kopyalıyoruz
 COPY src/ src/
 
 # Konteyner çalıştığında devreye girecek varsayılan komut
