@@ -12,7 +12,7 @@ dependencies = [
 ]
 
 [project.scripts]
-dev-setup = "dev_setup:main"
+dev-setup = "main:main"
 
 [build-system]
 requires = ["uv_build>=0.12.5,<0.13.0"]
@@ -26,3 +26,11 @@ dev = [
     "pytest-cov>=7.1.0",
     "ruff>=0.16.3",
 ]
+[tool.ruff]
+line-length = 88
+
+[tool.mypy]
+strict = true
+
+[tool.pytest.ini_options]
+addopts = "--cov"

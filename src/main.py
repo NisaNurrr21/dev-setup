@@ -1,13 +1,12 @@
-import uvicorn
-from fastapi import FastAPI
+def karsilama_mesaji(isim: str) -> str:
+    """Verilen isme özel bir karşılama mesajı döndürür."""
+    return f"Merhaba, {isim}! Staj projesine hos geldin."
 
-app = FastAPI(title="Dev Setup API")
 
-
-@app.get("/")
-def read_root():
-    return {"mesaj": "Tebrikler! Docker ve FastAPI kusursuz calisiyor! 🚀"}
+def main() -> None:
+    mesaj = karsilama_mesaji("Nisa Nur")
+    print(mesaj)
 
 
 if __name__ == "__main__":
-    uvicorn.run("src.main:app", host="0.0.0.0", port=8000)
+    main()

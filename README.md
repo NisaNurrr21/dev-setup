@@ -1,3 +1,5 @@
+[![CI](https://github.com/NisaNurrr21/dev-setup/actions/workflows/ci.yml/badge.svg)](https://github.com/NisaNurrr21/dev-setup/actions)
+
 # Dev-Setup Şablonu
 
 Bu repo, makine öğrenmesi ve veri odaklı yazılım mühendisliği projeleri için standart, üretime hazır (production-ready) bir başlangıç şablonudur.

@@ -2,7 +2,7 @@
 FROM python:3.12-slim AS builder
 
 # uv aracını resmi kaynağından alıp kopyalıyoruz
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+COPY --from=ghcr.io/astral-sh/uv:0.5.0 /uv /uvx /bin/
 
 WORKDIR /app
 
@@ -32,4 +32,4 @@ COPY --from=builder /usr/local/lib/python3.12/site-packages /usr/local/lib/pytho
 COPY src/ src/
 
 # Konteyner çalıştığında devreye girecek varsayılan komut
-CMD ["python", "-m", "src.main"]
+CMD ["python", "src/main.py"]

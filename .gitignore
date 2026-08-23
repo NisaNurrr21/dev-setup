@@ -2,3 +2,7 @@ data/
 *.ipynb_checkpoints
 .env
 models/*.pkl
+__pycache__/
+.DS_Store
+.coverage
+.venv/
