@@ -30,3 +30,4 @@ Bu görev kapsamında ayrı bir test reposu oluşturulmuş ve aşağıdaki senar
 * **Hassas Veri Temizliği:** Yanlışlıkla commit'lenen `.env` dosyası `git filter-branch` ile Git geçmişinden tamamen silindi.
 * **Merge Conflict (Çakışma):** İki farklı dalda aynı satır değiştirilerek kasten conflict yaratıldı ve manuel olarak çözüldü.
 * **Hata Avı (Bisect):** `git bisect` ile 5 commit'lik bir geçmişte arama yapılarak sistemi bozan "bad commit" tespit edildi.
+```
