@@ -23,7 +23,7 @@ make test
 
 # Kodu denetleme
 make lint
-
+```
 ## Ödev 1.3: Git Kriz Yönetimi Senaryoları
 Bu görev kapsamında ayrı bir test reposu oluşturulmuş ve aşağıdaki senaryolar başarıyla simüle edilerek çözülmüştür.
 
