@@ -36,4 +36,4 @@ strict = true
 addopts = "--cov"
 
 [tool.uv]
-package = true
+package = false
