@@ -23,14 +23,16 @@ make test
 make lint
 
 ## Ödev 1.3: Git Kriz Yönetimi Senaryoları
-Bu görev kapsamında ayrı bir test reposu oluşturulmuş ve aşağıdaki senaryolar başarıyla simüle edilerek çözülmüştür:
+Bu görev kapsamında ayrı bir test reposu oluşturulmuş ve aşağıdaki senaryolar başarıyla simüle edilerek çözülmüştür.
+
+**Test Reposu Linki:** https://github.com/NisaNurrr21/git-test
 
 * **Yanlış Dala Commit Atma:** `git reset --hard` ve `git cherry-pick` ile commit doğru dala taşındı.
 * **Commit Birleştirme (Squash):** `git rebase -i` kullanılarak 3 farklı WIP commit'i tek bir profesyonel commit'te birleştirildi.
 * **Hassas Veri Temizliği:** Yanlışlıkla commit'lenen `.env` dosyası `git filter-branch` ile Git geçmişinden tamamen silindi.
 * **Merge Conflict (Çakışma):** İki farklı dalda aynı satır değiştirilerek kasten conflict yaratıldı ve manuel olarak çözüldü.
 * **Hata Avı (Bisect):** `git bisect` ile 5 commit'lik bir geçmişte arama yapılarak sistemi bozan "bad commit" tespit edildi.
-```
+
 ### Ödev 1.4: Docker Multi-Stage Build İmaj Boyutu Ölçümü
 
 FastAPI servisinin Docker imajı oluşturulurken, imaj boyutunu 1GB'ın altına indirmek için **Multi-stage build** mimarisi (builder ve runner aşamaları) kullanılmıştır.
