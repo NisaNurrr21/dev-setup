@@ -15,6 +15,8 @@ Her paket yöneticisi, farklı bir mühendislik problemini çözmek üzere tasar
 
 Paket yöneticilerinin kurulum hızlarını analiz etmek amacıyla, yerel bir macOS terminalinde (Apple Silicon mimarisi) eşzamanlı bir test gerçekleştirilmiştir. Backend geliştirme süreçlerinde sıklıkla kullanılan `fastapi`, `uvicorn`, `numpy` ve `pandas` paketlerinin, tüm önbellekler temizlenerek (`--force-reinstall`) sıfırdan kurulma süreleri `time` komutu ile ölçülmüştür.
 
+*(Not: Başlıkta mimari özellikleri incelenen Poetry, pip-tools ve Conda araçları bu çalışmada ampirik olarak ölçülmemiş; hız testi doğrudan birbirinin alternatifi olan geleneksel `pip` ve `uv` arasında gerçekleştirilmiştir.)*
+
 * **Geleneksel pip Kurulumu:** `python3 -m pip install ...` komutu ile yapılan standart kurulum, terminal üzerinde **13.90 saniye** (4.10s user, 0.96s system) sürmüştür.
 * **uv Kurulumu:** Aynı paketler `uv pip install ...` komutu ile kurulduğunda, işlem yalnızca **2.82 saniye** (0.27s user, 0.38s system) sürmüştür.
 
