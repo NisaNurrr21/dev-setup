@@ -39,14 +39,9 @@ Bu görev kapsamında ayrı bir test reposu oluşturulmuş ve aşağıdaki senar
 
 FastAPI servisinin Docker imajı oluşturulurken, imaj boyutunu 1GB'ın altına indirmek için **Multi-stage build** mimarisi (builder ve runner aşamaları) kullanılmıştır.
 
-`docker images` komutu ile yapılan öncesi/sonrası (single-stage vs multi-stage) boyut karşılaştırması aşağıdadır:
+`docker images` komutu ile yapılan gerçek ölçüm karşılaştırması aşağıdadır:
 
-```bash
-docker images | grep fastapi-app
-# Çıktı:
-# REPOSITORY      TAG             IMAGE ID       CREATED          SIZE
-# fastapi-app     single-stage    a1b2c3d4e5f6   2 minutes ago    895MB
-# fastapi-app     multi-stage     f6e5d4c3b2a1   1 minute ago     142MB
-```
-
-Sonuç olarak: Tek aşamalı build yerine multi-stage build kullanılarak imaj boyutu **895MB'tan 142MB'a** (%84 oranında) düşürülmüş ve hedef başarıyla sağlanmıştır.
+```text
+REPOSITORY            TAG       IMAGE ID       SIZE
+fastapi-single        latest    c02d6ebed028   772MB
+fastapi-multi         latest    5dabc2e4cbf1   346MB
